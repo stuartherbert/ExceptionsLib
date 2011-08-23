@@ -5,14 +5,14 @@
     http://pear.php.net/dtd/package-2.0.xsd">
   <name>${project.name}</name>
   <channel>${project.channel}</channel>
-  <summary>Summary goes here</summary>
+  <summary>A simple component to simplify PHP error handling</summary>
   <description>
-    Description goes here
+    ExceptionsLib is an easy-to-use component to help you standardise your approach to PHP error handling, and to make it easy to deal with legacy PHP4-style errors.
   </description>
   <lead>
-    <name>Your name</name>
-    <user>Anything goes here</user>
-    <email>Your email address</email>
+    <name>Stuart Herbert</name>
+    <user>stuart</user>
+    <email>stuart@stuartherbert.com</email>
     <active>yes</active>
   </lead>
   <date>${build.date}</date>
@@ -25,7 +25,7 @@
     <release>stable</release>
     <api>stable</api>
   </stability>
-  <license>All rights reserved.</license>
+  <license>New BSD License.</license>
   <notes>
     No notes.
   </notes>
@@ -40,13 +40,13 @@ ${contents}
         <min>5.3.0</min>
       </php>
       <pearinstaller>
-        <min>1.6.0</min>
+        <min>1.9.3</min>
       </pearinstaller>
       <package>
         <name>Autoloader</name>
-        <channel>pear.gradwell.com</channel>
-        <min>2.0.0</min>
-	      <max>2.999.9999</max>
+        <channel>pear.phix-project.org</channel>
+        <min>3.0.0</min>
+	      <max>3.999.9999</max>
       </package>
     </required>
   </dependencies>
@@ -54,15 +54,15 @@ ${contents}
   <changelog>
     <release>
       <version>
-        <release>X.Y.Z</release>
-        <api>X.Y</api>
+        <release>1.0.0</release>
+        <api>1.0</api>
       </version>
       <stability>
         <release>stable</release>
         <api>stable</api>
       </stability>
       <date>Your release date</date>
-      <license>All rights reserved</license>
+      <license>New BSD license</license>
       <notes>
       </notes>
     </release>

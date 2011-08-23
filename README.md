@@ -1,31 +1,29 @@
-(This template is based on the README.md file used by Phix and its own components. Edit / replace to suit).
-
-ComponentName
+ExceptionsLib
 ==============
 
-**ComponentName** is a simple-to-use PHP component that provides ...?
+**ExceptionsLib** is a simple-to-use PHP component that simplifies error handling in your PHP apps and components.
 
 System-Wide Installation
 ------------------------
 
-ComponentName should be installed using the [PEAR Installer](http://pear.php.net). This installer is the PHP community's de-facto standard for installing PHP components.
+ExceptionsLib should be installed using the [PEAR Installer](http://pear.php.net). This installer is the PHP community's de-facto standard for installing PHP components.
 
-    sudo pear channel-discover <your pear channel>
-    sudo pear install --alldeps <your channel>/ComponentName
+    sudo pear channel-discover pear.phix-project.org
+    sudo pear install --alldeps phix/ExceptionsLib
 
 As A Dependency On Your Component
 ---------------------------------
 
-If you are creating a component that relies on ComponentName, please make sure that you add ComponentName to your component's package.xml file:
+If you are creating a component that relies on ExceptionsLib, please make sure that you add ExceptionsLib to your component's package.xml file:
 
 ```xml
 <dependencies>
   <required>
     <package>
-      <name>ComponentName</name>
-      <channel><!-- your PEAR channel --></channel>
-      <min><!-- your component's min version, e.g. 1.0.0 --></min>
-      <max><!-- your component's max version that guarantees backwards compatibility, e.g. 1.999.9999 --></max>
+      <name>ExceptionsLib</name>
+      <channel>pear.phix-project.org</channel>
+      <min>1.0.0</min>
+      <max>1.999.9999</max>
     </package>
   </required>
 </dependencies>
@@ -34,7 +32,7 @@ If you are creating a component that relies on ComponentName, please make sure t
 Usage
 -----
 
-The best documentation for ComponentName are the unit tests, which are shipped in the package.  You will find them installed into your PEAR repository, which on Linux systems is normally /usr/share/php/test.
+The best documentation for ExceptionsLib are the unit tests, which are shipped in the package.  You will find them installed into your PEAR repository, which on Linux systems is normally /usr/share/php/test.
 
 Development Environment
 -----------------------
@@ -49,8 +47,8 @@ If you want to patch or enhance this component, you will need to create a suitab
 
 You can then clone the git repository:
 
-    # ComponentName
-    git clone <your Git repo's URL>
+    # ExceptionsLib
+    git clone git@github.com:stuartherbert/ExceptionsLib.git
 
 Then, install a local copy of this component's dependencies to complete the development environment:
 
