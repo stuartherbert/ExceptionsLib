@@ -132,7 +132,6 @@ class E5xx_ServiceUnavailableExceptionTest extends \PHPUnit_Framework_TestCase
                 $parts = explode(': ', $caughtMessage);
                 array_shift($parts);
                 $retrievedMessage = implode(': ', $parts);
-                $this->assertEquals($expectedMessage, $retrievedMessage);
-                
+                $this->assertEquals($expectedMessage, $retrievedMessage);                
         }        
 }
