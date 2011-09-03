@@ -48,6 +48,6 @@ class E4xx_RequestTimeoutException extends E4xx_BadRequestException
 {
         public function __construct($message, $cause = null)
         {
-                \Exception::__construct('Request timeout: ' . $message, 407, $cause);
+                \Exception::__construct('Request timeout: ' . $message, 408, $cause);
         }
 }

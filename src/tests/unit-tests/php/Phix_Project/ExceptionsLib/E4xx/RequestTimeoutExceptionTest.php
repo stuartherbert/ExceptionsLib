@@ -65,7 +65,7 @@ class E4xx_RequestTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode407()
+        public function testThrownExceptionHasErrorCode408()
         {
                 // setup
                 $caughtException = false;
@@ -84,7 +84,7 @@ class E4xx_RequestTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 
                 // check the results
                 $this->assertTrue($caughtException);     
-                $this->assertEquals(407, $caughtCode);
+                $this->assertEquals(408, $caughtCode);
         }
         
         public function testIsABadRequestException()
