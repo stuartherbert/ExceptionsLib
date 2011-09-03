@@ -48,6 +48,6 @@ class E4xx_PaymentRequiredException extends E5xx_InternalServerErrorException
 {
         public function __construct($message, $cause = null)
         {
-                \Exception::__construct('Bad gateway: ' . $message, 402, $cause);
+                \Exception::__construct('Payment required: ' . $message, 402, $cause);
         }
 }
