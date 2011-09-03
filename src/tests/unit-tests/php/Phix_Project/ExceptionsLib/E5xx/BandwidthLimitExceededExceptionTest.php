@@ -65,7 +65,7 @@ class E5xx_BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCa
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode509()
         {
                 // setup
                 $caughtException = false;

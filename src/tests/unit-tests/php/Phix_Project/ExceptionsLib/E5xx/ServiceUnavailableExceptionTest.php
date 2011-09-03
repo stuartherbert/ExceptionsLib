@@ -65,7 +65,7 @@ class E5xx_ServiceUnavailableExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode503()
         {
                 // setup
                 $caughtException = false;

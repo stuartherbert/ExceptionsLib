@@ -65,7 +65,7 @@ class E5xx_GatewayTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode504()
         {
                 // setup
                 $caughtException = false;

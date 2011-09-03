@@ -65,7 +65,7 @@ class E5xx_NotImplementedExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode501()
         {
                 // setup
                 $caughtException = false;

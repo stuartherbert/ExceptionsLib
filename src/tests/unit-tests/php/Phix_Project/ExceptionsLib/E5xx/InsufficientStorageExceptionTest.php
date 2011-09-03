@@ -65,7 +65,7 @@ class E5xx_InsufficientStorageExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode507()
         {
                 // setup
                 $caughtException = false;
