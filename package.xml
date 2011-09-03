@@ -40,7 +40,7 @@ ${contents}
         <min>5.3.0</min>
       </php>
       <pearinstaller>
-        <min>1.9.3</min>
+        <min>1.9.4</min>
       </pearinstaller>
       <package>
         <name>Autoloader</name>
@@ -54,6 +54,21 @@ ${contents}
   <changelog>
     <release>
       <version>
+        <release>1.0.1</release>
+        <api>1.0</api>
+      </version>
+      <stability>
+        <release>stable</release>
+        <api>stable</api>
+      </stability>
+      <date>2011-09-03</date>
+      <license>New BSD license</license>
+      <notes>
+        Bug fix release
+      </notes>
+    </release>
+    <release>
+      <version>
         <release>1.0.0</release>
         <api>1.0</api>
       </version>
@@ -61,7 +76,7 @@ ${contents}
         <release>stable</release>
         <api>stable</api>
       </stability>
-      <date>Your release date</date>
+      <date>2011-09-03</date>
       <license>New BSD license</license>
       <notes>
       </notes>
