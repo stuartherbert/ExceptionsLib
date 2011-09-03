@@ -108,4 +108,32 @@ class E5xx_BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCa
                 // check the results
                 $this->assertTrue($caughtException);     
         }
+
+        public function testExceptionIncludesMessage()
+        {
+                // setup
+                $caughtException = false;
+                $caughtMessage   = null;
+                $expectedMessage = "test exception";
+                
+                // action
+                try
+                {
+                        throw new E5xx_BandwidthLimitExceededException($expectedMessage);
+                }
+                catch (E5xx_BandwidthLimitExceededException $e)
+                {
+                        $caughtException = true;
+                        $caughtMessage   = $e->getMessage();
+                }
+                
+                // check the results
+                $this->assertTrue($caughtException);
+                $parts = explode(': ', $caughtMessage);
+                array_shift($parts);
+                $retrievedMessage = implode(': ', $parts);
+                $this->assertEquals($expectedMessage, $retrievedMessage);
+                
+        }
+        
 }

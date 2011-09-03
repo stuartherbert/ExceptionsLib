@@ -86,4 +86,31 @@ class E5xx_InternalServerErrorExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);     
                 $this->assertEquals(500, $caughtCode);
         }
+        
+        public function testExceptionIncludesMessage()
+        {
+                // setup
+                $caughtException = false;
+                $caughtMessage   = null;
+                $expectedMessage = "test exception";
+                
+                // action
+                try
+                {
+                        throw new E5xx_InternalServerErrorException($expectedMessage);
+                }
+                catch (E5xx_InternalServerErrorException $e)
+                {
+                        $caughtException = true;
+                        $caughtMessage   = $e->getMessage();
+                }
+                
+                // check the results
+                $this->assertTrue($caughtException);
+                $parts = explode(': ', $caughtMessage);
+                array_shift($parts);
+                $retrievedMessage = implode(': ', $parts);
+                $this->assertEquals($expectedMessage, $retrievedMessage);
+                
+        }        
 }
