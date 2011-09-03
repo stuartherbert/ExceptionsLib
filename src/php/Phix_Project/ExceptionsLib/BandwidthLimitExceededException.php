@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class BandwidthLimitExceededException extends InternalServerError
+class BandwidthLimitExceededException extends InternalServerErrorException
 {
-        public function __construct(\Exception $cause = null)
+        public function __construct($message, \Exception $cause = null)
         {
-                Exception::__construct("Bandwidth limit exceeded", 509, $cause);
+                \Exception::__construct("Bandwidth limit exceeded: " . $message, 509, $cause);
         }
 }
