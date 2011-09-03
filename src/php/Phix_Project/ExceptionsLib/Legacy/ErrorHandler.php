@@ -52,7 +52,7 @@ class Legacy_ErrorHandler
         {
                 // execute the code, inside our wrapper
                 set_error_handler(array($this, 'handleLegacyError'));
-                $callback();
+                $return = $callback();
                 restore_error_handler();
                 
                 // throw any resulting exception
@@ -60,6 +60,8 @@ class Legacy_ErrorHandler
                 {
                         throw $this->exceptionToThrow;
                 }
+                
+                return $return;
         }
         
         public function handleLegacyError($errno, $errstr, $errfile, $errline = 0, $errcontext = null)
