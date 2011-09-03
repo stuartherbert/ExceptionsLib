@@ -44,10 +44,46 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class InternalServerError extends \Exception
+class InternalServerErrorExceptionTest extends \PHPUnit_Framework_TestCase
 {
-        public function __construct($cause = null)
+        public function testCanThrowAsException()
         {
-                parent::__construct("Internal server error", 500, $cause);
+                // setup
+                $caughtException = false;
+                
+                // action
+                try
+                {
+                        throw new InternalServerErrorException("test exception");
+                }
+                catch (InternalServerErrorException $e)
+                {
+                        $caughtException = true;
+                }
+                
+                // check the results
+                $this->assertTrue($caughtException);
+        }
+        
+        public function testThrownExceptionHasErrorCode500()
+        {
+                // setup
+                $caughtException = false;
+                $caughtCode      = 0;
+                
+                // action
+                try
+                {
+                        throw new InternalServerErrorException("test exception");
+                }
+                catch (InternalServerErrorException $e)
+                {
+                        $caughtException = true;
+                        $caughtCode      = $e->getCode();
+                }
+                
+                // check the results
+                $this->assertTrue($caughtException);     
+                $this->assertEquals(500, $caughtCode);
         }
 }
