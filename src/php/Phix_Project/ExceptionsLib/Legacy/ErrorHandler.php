@@ -44,7 +44,7 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class LegacyErrorHandler
+class Legacy_ErrorHandler
 {
         private $exceptionToThrow = null;
         
