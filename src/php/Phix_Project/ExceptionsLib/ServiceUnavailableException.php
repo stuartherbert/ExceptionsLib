@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class ServiceUnavailableException extends InternalServerError
+class ServiceUnavailableException extends InternalServerErrorException
 {
-        public function __construct($cause = null)
+        public function __construct($message, $cause = null)
         {
-                Exception::__construct("Service temporarily unavailable", 503, $cause);
+                \Exception::__construct("Service temporarily unavailable: " . $message, 503, $cause);
         }
 }
