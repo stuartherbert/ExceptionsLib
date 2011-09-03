@@ -48,6 +48,6 @@ class E4xx_NotAcceptableException extends E5xx_InternalServerErrorException
 {
         public function __construct($message, $cause = null)
         {
-                \Exception::__construct('Bad gateway: ' . $message, 406, $cause);
+                \Exception::__construct('Not acceptable: ' . $message, 406, $cause);
         }
 }
