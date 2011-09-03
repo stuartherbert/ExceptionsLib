@@ -8,7 +8,7 @@
     <echo message="git-force-tag" />
     <echo message="  Force tag the current version in git (use with caution!)" />
     <echo message="" />
-    <echo message="publish-and-push" />
+    <echo message="pp" />
     <echo message="  Git push to upstream, publish to PEAR channel" />
     <echo message="" />
     <echo message="tpp - tag, publish, and push" />
@@ -22,7 +22,7 @@
   <target name="git-force-tag">
     <exec command="git tag -f -a -m 'Release ${project.majorVersion}.${project.minorVersion}.${project.patchLevel}' ${project.majorVersion}.${project.minorVersion}.${project.patchLevel}" logoutput="true" checkreturn="true" />
   </target>
-  <target name="publish-and-push" depends="publish-local">
+  <target name="pp" depends="publish-local">
     <exec command="git push --mirror" logoutput="true" checkreturn="true" />
   </target>
   <target name="tpp" depends="git-force-tag, publish-local">
