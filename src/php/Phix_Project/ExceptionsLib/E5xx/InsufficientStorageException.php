@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class InternalServerErrorException extends \Exception
+class E5xx_InsufficientStorageException extends E5xx_InternalServerErrorException
 {
-        public function __construct($message, $cause = null)
+        public function __construct($message, \Exception $cause = null)
         {
-                parent::__construct("Internal server error: " . $message, 500, $cause);
+                \Exception::__construct("Insufficient storage: " . $message, 507, $cause);
         }
 }

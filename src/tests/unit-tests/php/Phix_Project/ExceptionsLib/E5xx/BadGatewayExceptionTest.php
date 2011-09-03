@@ -44,7 +44,7 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class BadGatewayExceptionTest extends \PHPUnit_Framework_TestCase
+class E5xx_BadGatewayExceptionTest extends \PHPUnit_Framework_TestCase
 {
         public function testCanThrowAsException()
         {
@@ -54,9 +54,9 @@ class BadGatewayExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new BadGatewayException("test exception");
+                        throw new E5xx_BadGatewayException("test exception");
                 }
-                catch (BadGatewayException $e)
+                catch (E5xx_BadGatewayException $e)
                 {
                         $caughtException = true;
                 }
@@ -74,9 +74,9 @@ class BadGatewayExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new BadGatewayException("test exception");
+                        throw new E5xx_BadGatewayException("test exception");
                 }
-                catch (BadGatewayException $e)
+                catch (E5xx_BadGatewayException $e)
                 {
                         $caughtException = true;
                         $caughtCode      = $e->getCode();
@@ -95,11 +95,11 @@ class BadGatewayExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new BadGatewayException("test exception");
+                        throw new E5xx_BadGatewayException("test exception");
                 }
-                catch (InternalServerErrorException $e)
+                catch (E5xx_InternalServerErrorException $e)
                 {
-                        if ($e instanceof BadGatewayException)
+                        if ($e instanceof E5xx_BadGatewayException)
                         {
                                 $caughtException = true;
                         }

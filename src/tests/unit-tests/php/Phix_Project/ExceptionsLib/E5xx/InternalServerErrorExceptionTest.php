@@ -44,7 +44,7 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class GatewayTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
+class E5xx_InternalServerErrorExceptionTest extends \PHPUnit_Framework_TestCase
 {
         public function testCanThrowAsException()
         {
@@ -54,9 +54,9 @@ class GatewayTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new GatewayTimeoutException("test exception");
+                        throw new E5xx_InternalServerErrorException("test exception");
                 }
-                catch (GatewayTimeoutException $e)
+                catch (E5xx_InternalServerErrorException $e)
                 {
                         $caughtException = true;
                 }
@@ -65,7 +65,7 @@ class GatewayTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode500()
         {
                 // setup
                 $caughtException = false;
@@ -74,9 +74,9 @@ class GatewayTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new GatewayTimeoutException("test exception");
+                        throw new E5xx_InternalServerErrorException("test exception");
                 }
-                catch (GatewayTimeoutException $e)
+                catch (E5xx_InternalServerErrorException $e)
                 {
                         $caughtException = true;
                         $caughtCode      = $e->getCode();
@@ -84,28 +84,6 @@ class GatewayTimeoutExceptionTest extends \PHPUnit_Framework_TestCase
                 
                 // check the results
                 $this->assertTrue($caughtException);     
-                $this->assertEquals(504, $caughtCode);
-        }
-        
-        public function testIsAnInternalServerErrorException()
-        {
-                // setup
-                $caughtException = false;
-                
-                // action
-                try
-                {
-                        throw new GatewayTimeoutException("test exception");
-                }
-                catch (InternalServerErrorException $e)
-                {
-                        if ($e instanceof GatewayTimeoutException)
-                        {
-                                $caughtException = true;
-                        }
-                }
-                
-                // check the results
-                $this->assertTrue($caughtException);     
+                $this->assertEquals(500, $caughtCode);
         }
 }

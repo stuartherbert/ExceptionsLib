@@ -44,7 +44,7 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class NotImplementedExceptionTest extends \PHPUnit_Framework_TestCase
+class E5xx_InsufficientStorageExceptionTest extends \PHPUnit_Framework_TestCase
 {
         public function testCanThrowAsException()
         {
@@ -54,9 +54,9 @@ class NotImplementedExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new NotImplementedException("test exception");
+                        throw new E5xx_InsufficientStorageException("test exception");
                 }
-                catch (NotImplementedException $e)
+                catch (E5xx_InsufficientStorageException $e)
                 {
                         $caughtException = true;
                 }
@@ -74,9 +74,9 @@ class NotImplementedExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new NotImplementedException("test exception");
+                        throw new E5xx_InsufficientStorageException("test exception");
                 }
-                catch (NotImplementedException $e)
+                catch (E5xx_InsufficientStorageException $e)
                 {
                         $caughtException = true;
                         $caughtCode      = $e->getCode();
@@ -84,7 +84,7 @@ class NotImplementedExceptionTest extends \PHPUnit_Framework_TestCase
                 
                 // check the results
                 $this->assertTrue($caughtException);     
-                $this->assertEquals(501, $caughtCode);
+                $this->assertEquals(507, $caughtCode);
         }
         
         public function testIsAnInternalServerErrorException()
@@ -95,11 +95,11 @@ class NotImplementedExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new NotImplementedException("test exception");
+                        throw new E5xx_InsufficientStorageException("test exception");
                 }
-                catch (InternalServerErrorException $e)
+                catch (E5xx_InternalServerErrorException $e)
                 {
-                        if ($e instanceof NotImplementedException)
+                        if ($e instanceof E5xx_InsufficientStorageException)
                         {
                                 $caughtException = true;
                         }

@@ -44,7 +44,7 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCase
+class E5xx_ServiceUnavailableExceptionTest extends \PHPUnit_Framework_TestCase
 {
         public function testCanThrowAsException()
         {
@@ -54,9 +54,9 @@ class BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new BandwidthLimitExceededException("test exception");
+                        throw new E5xx_ServiceUnavailableException("test exception");
                 }
-                catch (BandwidthLimitExceededException $e)
+                catch (E5xx_ServiceUnavailableException $e)
                 {
                         $caughtException = true;
                 }
@@ -74,9 +74,9 @@ class BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new BandwidthLimitExceededException("test exception");
+                        throw new E5xx_ServiceUnavailableException("test exception");
                 }
-                catch (BandwidthLimitExceededException $e)
+                catch (E5xx_ServiceUnavailableException $e)
                 {
                         $caughtException = true;
                         $caughtCode      = $e->getCode();
@@ -84,7 +84,7 @@ class BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCase
                 
                 // check the results
                 $this->assertTrue($caughtException);     
-                $this->assertEquals(509, $caughtCode);
+                $this->assertEquals(503, $caughtCode);
         }
         
         public function testIsAnInternalServerErrorException()
@@ -95,11 +95,11 @@ class BandwidthLimitExceededExceptionTest extends \PHPUnit_Framework_TestCase
                 // action
                 try
                 {
-                        throw new BandwidthLimitExceededException("test exception");
+                        throw new E5xx_ServiceUnavailableException("test exception");
                 }
-                catch (InternalServerErrorException $e)
+                catch (E5xx_InternalServerErrorException $e)
                 {
-                        if ($e instanceof BandwidthLimitExceededException)
+                        if ($e instanceof E5xx_ServiceUnavailableException)
                         {
                                 $caughtException = true;
                         }

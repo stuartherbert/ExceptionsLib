@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class ServiceUnavailableException extends InternalServerErrorException
+class E5xx_GatewayTimeoutException extends E5xx_InternalServerErrorException
 {
-        public function __construct($message, $cause = null)
+        public function __construct($message, \Exception $cause = null)
         {
-                \Exception::__construct("Service temporarily unavailable: " . $message, 503, $cause);
+                \Exception::__construct("Gateway timeout: " . $message, 504, $cause);
         }
 }

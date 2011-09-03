@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class BadGatewayException extends InternalServerErrorException
+class E5xx_InternalServerErrorException extends \Exception
 {
         public function __construct($message, $cause = null)
         {
-                \Exception::__construct('Bad gateway: ' . $message, 502, $cause);
+                parent::__construct("Internal server error: " . $message, 500, $cause);
         }
 }

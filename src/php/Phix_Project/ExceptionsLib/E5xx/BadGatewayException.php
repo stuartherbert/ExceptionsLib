@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class BandwidthLimitExceededException extends InternalServerErrorException
+class E5xx_BadGatewayException extends E5xx_InternalServerErrorException
 {
-        public function __construct($message, \Exception $cause = null)
+        public function __construct($message, $cause = null)
         {
-                \Exception::__construct("Bandwidth limit exceeded: " . $message, 509, $cause);
+                \Exception::__construct('Bad gateway: ' . $message, 502, $cause);
         }
 }

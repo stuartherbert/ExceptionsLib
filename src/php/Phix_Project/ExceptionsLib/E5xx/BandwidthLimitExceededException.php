@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class NotImplementedException extends InternalServerErrorException
+class E5xx_BandwidthLimitExceededException extends E5xx_InternalServerErrorException
 {
-        public function __construct($method, \Exception $cause = null)
+        public function __construct($message, \Exception $cause = null)
         {
-                \Exception::__construct("Not implemented: " . $method, 501, $cause);
+                \Exception::__construct("Bandwidth limit exceeded: " . $message, 509, $cause);
         }
 }
