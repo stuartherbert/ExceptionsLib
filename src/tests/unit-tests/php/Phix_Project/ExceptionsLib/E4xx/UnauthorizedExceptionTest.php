@@ -65,7 +65,7 @@ class E4xx_UnauthorizedExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode401()
         {
                 // setup
                 $caughtException = false;
@@ -87,7 +87,7 @@ class E4xx_UnauthorizedExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertEquals(401, $caughtCode);
         }
         
-        public function testIsAnInternalServerErrorException()
+        public function testIsABadRequestException()
         {
                 // setup
                 $caughtException = false;
@@ -97,7 +97,7 @@ class E4xx_UnauthorizedExceptionTest extends \PHPUnit_Framework_TestCase
                 {
                         throw new E4xx_UnauthorizedException("test exception");
                 }
-                catch (E5xx_InternalServerErrorException $e)
+                catch (E4xx_BadRequestException $e)
                 {
                         if ($e instanceof E4xx_UnauthorizedException)
                         {

@@ -65,7 +65,7 @@ class E4xx_BadRequestExceptionTest extends \PHPUnit_Framework_TestCase
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode500()
+        public function testThrownExceptionHasErrorCode400()
         {
                 // setup
                 $caughtException = false;

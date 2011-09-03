@@ -65,7 +65,7 @@ class E4xx_ProxyAuthenticationRequiredExceptionTest extends \PHPUnit_Framework_T
                 $this->assertTrue($caughtException);
         }
         
-        public function testThrownExceptionHasErrorCode502()
+        public function testThrownExceptionHasErrorCode407()
         {
                 // setup
                 $caughtException = false;
@@ -87,7 +87,7 @@ class E4xx_ProxyAuthenticationRequiredExceptionTest extends \PHPUnit_Framework_T
                 $this->assertEquals(407, $caughtCode);
         }
         
-        public function testIsAnInternalServerErrorException()
+        public function testIsABadRequestException()
         {
                 // setup
                 $caughtException = false;
@@ -97,7 +97,7 @@ class E4xx_ProxyAuthenticationRequiredExceptionTest extends \PHPUnit_Framework_T
                 {
                         throw new E4xx_ProxyAuthenticationRequiredException("test exception");
                 }
-                catch (E5xx_InternalServerErrorException $e)
+                catch (E4xx_BadRequestException $e)
                 {
                         if ($e instanceof E4xx_ProxyAuthenticationRequiredException)
                         {

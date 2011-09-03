@@ -44,7 +44,7 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class E4xx_MethodNotAllowedException extends E5xx_InternalServerErrorException
+class E4xx_MethodNotAllowedException extends E4xx_BadRequestException
 {
         public function __construct($message, $cause = null)
         {
