@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class GatewayTimeoutException extends InternalServerError
+class GatewayTimeoutException extends InternalServerErrorException
 {
-        public function __construct(\Exception $cause = null)
+        public function __construct($message, \Exception $cause = null)
         {
-                Exception::__construct("Gateway timeout", 504, $cause);
+                \Exception::__construct("Gateway timeout: " . $message, 504, $cause);
         }
 }
