@@ -44,10 +44,10 @@
 
 namespace Phix_Project\ExceptionsLib;
 
-class NotImplementedException extends InternalServerError
+class NotImplementedException extends InternalServerErrorException
 {
         public function __construct($method, \Exception $cause = null)
         {
-                Exception::__construct("Not implemented: " . $method, 501, $cause);
+                \Exception::__construct("Not implemented: " . $method, 501, $cause);
         }
 }
