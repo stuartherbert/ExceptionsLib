@@ -50,6 +50,9 @@ class Legacy_ErrorHandler
         
         public function run($callback)
         {
+                // clear the exceptionToThrow from a previous run
+                $this->exceptionToThrow = null;
+                
                 // execute the code, inside our wrapper
                 set_error_handler(array($this, 'handleLegacyError'));
                 $return = $callback();
@@ -66,6 +69,11 @@ class Legacy_ErrorHandler
         
         public function handleLegacyError($errno, $errstr, $errfile, $errline = 0, $errcontext = null)
         {
+                // report the highest level exception (lowest value)
+                if ($this->exceptionToThrow && $this->exceptionToThrow->getErrorCode() < $errno) {
+                        return;
+                }
+                
                 // work out what kind of exception to throw
                 switch($errno)
                 {
@@ -78,7 +86,6 @@ class Legacy_ErrorHandler
                         case E_USER_DEPRECATED:
                                 // we do not want to throw an exception
                                 // for any of these
-                                $this->exceptionToThrow = null;
                                 break;
                         
                         case E_ERROR:
