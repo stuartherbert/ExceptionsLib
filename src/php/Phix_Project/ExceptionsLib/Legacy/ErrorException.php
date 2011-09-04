@@ -46,8 +46,15 @@ namespace Phix_Project\ExceptionsLib;
 
 class Legacy_ErrorException extends E5xx_InternalServerErrorException
 {
+        private $errorCode;
+        
         public function __construct($errno, $errstr, $errfile, $errline = 0)
         {
                 \Exception::__construct('Legacy PHP error: ' . $errno . ': ' . $errstr . ': at line ' . $errline . ' in file ' . $errfile, 500);
+                $this->errorCode = $errno;
+        }
+        
+        public function getErrorCode() {
+                return $this->errorCode;
         }
 }
