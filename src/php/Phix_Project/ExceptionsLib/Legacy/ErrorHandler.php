@@ -86,7 +86,6 @@ class Legacy_ErrorHandler
                         case E_USER_DEPRECATED:
                                 // we do not want to throw an exception
                                 // for any of these
-                                $this->exceptionToThrow = null;
                                 break;
                         
                         case E_ERROR:
