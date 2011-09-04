@@ -47,6 +47,7 @@ namespace Phix_Project\ExceptionsLib;
 class Legacy_ErrorException extends E5xx_InternalServerErrorException
 {
         private $errorCode;
+        private $callbackName =  null;
         
         public function __construct($errno, $errstr, $errfile, $errline = 0)
         {
@@ -54,7 +55,18 @@ class Legacy_ErrorException extends E5xx_InternalServerErrorException
                 $this->errorCode = $errno;
         }
         
-        public function getErrorCode() {
+        public function getErrorCode() 
+        {
                 return $this->errorCode;
+        }
+        
+        public function getCallbackName()
+        {
+                return $this->callbackName;
+        }
+        
+        public function setCallbackName($callbackName)
+        {
+                $this->callbackName = $callbackName;
         }
 }
