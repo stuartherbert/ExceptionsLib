@@ -50,6 +50,9 @@ class Legacy_ErrorHandler
         
         public function run($callback)
         {
+                // clear the exceptionToThrow from a previous run
+                $this->exceptionToThrow = null;
+                
                 // execute the code, inside our wrapper
                 set_error_handler(array($this, 'handleLegacyError'));
                 $return = $callback();
@@ -66,32 +69,5 @@ class Legacy_ErrorHandler
         
         public function handleLegacyError($errno, $errstr, $errfile, $errline = 0, $errcontext = null)
         {
-                // work out what kind of exception to throw
-                switch($errno)
-                {
-                        case E_CORE_ERROR:
-                        case E_CORE_WARNING:
-                        case E_COMPILE_ERROR:
-                        case E_COMPILE_WARNING:
-                        case E_STRICT:
-                        case E_DEPRECATED:
-                        case E_USER_DEPRECATED:
-                                // we do not want to throw an exception
-                                // for any of these
-                                $this->exceptionToThrow = null;
-                                break;
-                        
-                        case E_ERROR:
-                        case E_PARSE:
-                        case E_WARNING:
-                        case E_NOTICE:
-                        case E_USER_ERROR:
-                        case E_USER_NOTICE:
-                                // this is the default if a user calls trigger_error() only with a message
-                        case E_USER_WARNING:
-                        case E_RECOVERABLE_ERROR:
-                        default:
-                                $this->exceptionToThrow = new Legacy_ErrorException($errno, $errstr, $errfile, $errline);
-                }
-        }
-}
+                // report the highest level exception (lowest value)
+                if ($this->exceptionToThrow && $this->exceptionToThrow->getErrorCode() < $errno)
