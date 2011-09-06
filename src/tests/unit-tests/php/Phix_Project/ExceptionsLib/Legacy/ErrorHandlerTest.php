@@ -158,4 +158,28 @@ class Legacy_ErrorHandlerTest extends \PHPUnit_Framework_TestCase
                 // check
                 $this->assertEquals(200, $returned);
         }
+        
+        public function testReturnsCallbackName()
+        {
+                // setup
+                $obj = new Legacy_ErrorHandler();
+                $func = function() {
+                        trigger_error("Oh dear");
+                };
+                
+                // action
+                $caughtException = false;
+                try
+                {
+                        $obj->run($func);
+                }
+                catch (Legacy_ErrorException $e)
+                {
+                        $caughtException = $e;
+                }
+                
+                // check
+                $this->assertTrue($caughtException !== false);
+                $this->assertEquals($func, $caughtException->getCallbackName());
+        }
 }
