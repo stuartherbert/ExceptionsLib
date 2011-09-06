@@ -59,7 +59,7 @@ class Legacy_ErrorHandler
                 
                 // execute the code, inside our wrapper
                 set_error_handler(array($this, 'handleLegacyError'));
-                $return = $callback();
+                $return = call_user_func($callback);
                 restore_error_handler();
                 
                 // throw any resulting exception
