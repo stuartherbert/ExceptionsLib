@@ -52,14 +52,14 @@ class Legacy_ErrorHandler
          */
         private $exceptionToThrow = null;
         
-        public function run($callback)
+        public function run($callback, $params = array())
         {
                 // clear the exceptionToThrow from a previous run
                 $this->exceptionToThrow = null;
                 
                 // execute the code, inside our wrapper
                 set_error_handler(array($this, 'handleLegacyError'));
-                $return = call_user_func($callback);
+                $return = call_user_func_array($callback, $params);
                 restore_error_handler();
                 
                 // throw any resulting exception
