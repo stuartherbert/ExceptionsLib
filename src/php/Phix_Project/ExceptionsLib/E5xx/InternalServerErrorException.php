@@ -43,8 +43,9 @@
  */
 
 namespace Phix_Project\ExceptionsLib;
+use Exception;
 
-class E5xx_InternalServerErrorException extends \Exception
+class E5xx_InternalServerErrorException extends Exception
 {
         public function __construct($message, $cause = null)
         {
