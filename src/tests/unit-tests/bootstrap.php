@@ -29,6 +29,7 @@ require_once(APP_LIBDIR . '/Phix_Project/Autoloader4/PSR0/Autoloader.php');
 $__autoloader = PSR0_Autoloader::startAutoloading();
 
 // step 3: add the additional paths to the include path
+$__autoloader->emptySearchList();
 $__autoloader->searchFirst(APP_LIBDIR);
 $__autoloader->searchFirst(APP_TESTDIR);
 $__autoloader->searchFirst(APP_TOPDIR);
