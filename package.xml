@@ -40,10 +40,10 @@ ${contents}
         <min>1.9.4</min>
       </pearinstaller>
       <package>
-        <name>Autoloader</name>
+        <name>Autoloader4</name>
         <channel>pear.phix-project.org</channel>
-        <min>3.0.0</min>
-	      <max>3.999.9999</max>
+        <min>4.0.0</min>
+	      <max>4.999.9999</max>
       </package>
     </required>
   </dependencies>
