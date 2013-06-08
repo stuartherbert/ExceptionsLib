@@ -1,5 +1,5 @@
 {
-	"name": "phix/exceptionslib1",
+	"name": "phix/exceptionslib",
 	"description": "exceptionslib1 is a simple-to-use PHP component that simplifies error handling in your PHP apps and components",
 	"keywords": [
 		"exceptions",
