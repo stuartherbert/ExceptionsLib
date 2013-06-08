@@ -23,6 +23,6 @@
 		"psr-0": { "" : "src/php/" }
 	},
 	"require-dev": {
-		"phix/autoloader": "4.*"
+		"phix/autoloader4": "4.*"
 	}
 }
