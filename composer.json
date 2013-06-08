@@ -1,0 +1,25 @@
+{
+	"name": "phix/exceptionslib1",
+	"description": "exceptionslib1 is a simple-to-use PHP component that simplifies error handling in your PHP apps and components",
+	"keywords": [
+		"exceptions",
+		"error handling"
+	],
+	"homepage": "https://github.com/stuartherbert/ExceptionsLib/",
+	"license": "BSD-3-Clause",
+	"authors": [
+		{
+			"name": "Stuart Herbert",
+			"email": "stuart@stuartherbert.com",
+			"homepage": "http://www.stuartherbert.com",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/stuartherbert/ExceptionsLib/issues",
+		"source": "https://github.com/stuartherbert/ExceptionsLib/"
+	},
+	"autoload": {
+		"psr-0": { "" : "src/php/" }
+	}
+}
