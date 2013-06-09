@@ -1,6 +1,6 @@
 {
-	"name": "phix/exceptionslib1",
-	"description": "exceptionslib1 is a simple-to-use PHP component that simplifies error handling in your PHP apps and components",
+	"name": "phix/exceptionslib",
+	"description": "exceptionslib is a simple-to-use PHP component that simplifies error handling in your PHP apps and components",
 	"keywords": [
 		"exceptions",
 		"error handling"
@@ -21,5 +21,8 @@
 	},
 	"autoload": {
 		"psr-0": { "" : "src/php/" }
+	},
+	"require-dev": {
+		"phix/autoloader": "4.*"
 	}
 }
